@@ -1,29 +1,20 @@
-# Create T3 App
+# Liveblocks Splitting Editor Bug
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Installing
+1. Download the repo locally `git clone git@github.com:francistogram/liveblocks-bug.git`
+2. Create a `.env` and set `NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_API_KEY` with an API key from Liveblocks
+3. Install dependencies `yarn`
+4. Run the app `yarn dev`
 
-## What's next? How do I make an app with this?
+## Reproducing the Bug
+### Video Walkthrough
+https://github.com/user-attachments/assets/6f4e8aaa-d6e5-4c78-88dd-06ce7d6cb6e1
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+### Working State / Expected Outcome
+In the current state of the app if you go into the editor and type some words and then add 5 new lines between the words it'll split the editor at that point into two editors
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### Broken State (Liveblocks is used)
+First uncomment [these lines of code in Editor.tsx](https://github.com/francistogram/liveblocks-bug/blob/main/src/components/Editor.tsx#L65-L70)
+You'll see the ability to add comments which means Liveblocks has been imported into the editor
+If you try spitting the editor again you'll get an error
+<img width="987" alt="image" src="https://github.com/user-attachments/assets/b6131ddf-d5c3-4662-877d-f7c44224b4ae">
