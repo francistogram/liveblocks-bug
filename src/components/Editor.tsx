@@ -62,12 +62,12 @@ const Editor = ({
         <HistoryPlugin />
         <AutoFocusPlugin />
         <SplitEditorPlugin editorID={id} addEditor={addEditor} />
-        <LiveblocksPlugin>
+        {/* <LiveblocksPlugin>
           <ClientSideSuspense fallback={null}>
             <ThreadOverlay />
             <FloatingInlineCommentsPlugin />
           </ClientSideSuspense>
-        </LiveblocksPlugin>
+        </LiveblocksPlugin> */}
       </div>
     </LexicalComposer>
   );

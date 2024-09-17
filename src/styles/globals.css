@@ -234,3 +234,8 @@ pre::-webkit-scrollbar {
 pre::-webkit-scrollbar-thumb {
   background: #999;
 }
+
+.lb-lexical-thread-mark {
+  background-color: #1177e1;
+  color: white;
+}
